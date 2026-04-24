@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "xji47a5n",
+  "version": "8HJmkMZw",
   "assets": [
     {
       "hash": "sha256-VKYIz10KkMkPBtI6Q7mhju+v67NJwp5Z98BWylo0MLM=",
@@ -66,8 +66,8 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.zljv0sq4pe.wasm"
     },
     {
-      "hash": "sha256-kG1OWrPLfONC6j35blb5ev7gaPeyJPyqaLCsqEhoSGQ=",
-      "url": "_framework/PortfolioSite.wgr6law426.wasm"
+      "hash": "sha256-E7w2jMmJm/X/++Q7uHNVKCVhzgKvO8VYupR2SD9teqo=",
+      "url": "_framework/PortfolioSite.5mxznapdit.wasm"
     },
     {
       "hash": "sha256-17OdZiWxlN2U93TJJVsN/+gZ1gJ2bkvWc8lh6tAQLOs=",
@@ -118,8 +118,8 @@ self.assetsManifest = {
       "url": "_framework/System.Private.CoreLib.nuekdko75x.wasm"
     },
     {
-      "hash": "sha256-CSc4nGRHig78TDzVb5UhRifcAuEK4O546H1IUxOvKXo=",
-      "url": "_framework/System.Private.Uri.fi64zfserz.wasm"
+      "hash": "sha256-0bX+4xCrJ/1ut5W8g8BQpp4vaOU2JkvAlf4/GumJEHE=",
+      "url": "_framework/System.Private.Uri.hg8wrmjal6.wasm"
     },
     {
       "hash": "sha256-STusHuW091sRW9n4q+lRIbpwkpf8iu25N7pMmzVUR1E=",
@@ -158,16 +158,16 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.66stpp682q.js"
     },
     {
-      "hash": "sha256-Y5KQLqboTQStTmoBRCSfaP+jWUJKB5ElDHBTv69B0AI=",
-      "url": "_framework/dotnet.95u054mzei.js"
-    },
-    {
       "hash": "sha256-2lvfACsds38yB7F9BvnIUtb0JBZIjimRTjlFpr4MLSw=",
       "url": "_framework/dotnet.native.imnhyiqpc9.wasm"
     },
     {
       "hash": "sha256-tlrn00yvndmJzhFdKpELUlytdgWFyGFdTWjI10bgILU=",
       "url": "_framework/dotnet.native.mx9wzm9o5h.js"
+    },
+    {
+      "hash": "sha256-IEUB38bhqMyclsYydhpnuvK3hTevNJtXMawomsFtvYY=",
+      "url": "_framework/dotnet.oy8aneom6f.js"
     },
     {
       "hash": "sha256-/ndm/PF1BeBT5mXzYAES79wNK5sIZIQKAGcUqPL9ZP8=",
@@ -202,7 +202,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-ZHTR4lQxWcOhL9GaFnnMv7HlmI5BiiMjPqkMfvGUhsw=",
+      "hash": "sha256-YWQI/6h6g2fY9MHMLvV8H05+n9NlzzK0hn6AGkTcCuo=",
       "url": "index.html"
     },
     {
