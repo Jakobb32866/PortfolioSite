@@ -45,10 +45,6 @@
             if (redirect && redirect !== location.href) {
                 history.replaceState(null, null, redirect);
             }
-            var p = new URLSearchParams(location.search).get('p');
-            if (p) {
-                history.replaceState(null, null, p || '/');
-            }
         })();
     </script>
 </body>
