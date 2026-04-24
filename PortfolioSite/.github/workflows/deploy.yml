@@ -16,7 +16,8 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Publish
-        run: dotnet publish PortfolioSite/PortfolioSite.csproj -c Release -o publish
+        run: dotnet publish PortfolioSite.csproj -c Release -o publish
+        working-directory: PortfolioSite
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
