@@ -1,0 +1,73 @@
+@page "/works/k-means-iris"
+@inject NavigationManager Nav
+@inject AppState State
+@inject IJSRuntime JS
+@using PortfolioSite.Models
+@implements IDisposable
+
+<div class="post-page">
+    <button class="post-back" @onclick='() => Nav.NavigateTo("/works")'>@(State.Lang == "pl" ? "← prace" : "← works")</button>
+
+    <div class="page-header">
+        <div class="page-label">// @_item?.Type</div>
+        <h1 class="page-title">@(State.Lang == "pl" ? _item?.TitlePl : _item?.TitleEn)</h1>
+        <div class="post-meta">
+            <span class="post-date">@_item?.Date</span>
+            @foreach (var tag in _item?.Tags ?? new List<string>())
+            {
+                <span class="we-tag-inline">@tag</span>
+            }
+        </div>
+        <div class="post-links">
+            @if (_item?.GitHubUrl != null)
+            {
+                <a href="@_item.GitHubUrl" target="_blank" class="post-link">GitHub →</a>
+            }
+            @if (_item?.LiveUrl != null)
+            {
+                <a href="@_item.LiveUrl" target="_blank" class="post-link post-link--live">Live →</a>
+            }
+        </div>
+    </div>
+
+    <div class="post-content">
+        @if (State.Lang == "pl")
+        {
+            <p>Zadanie z przedmiotu NAI - grupowanie k-means na zbiorze Iris, bez żadnych bibliotek ML.</p>
+            <p>K-means szuka k skupisk w danych minimalizując SSE – sumę kwadratów odległości każdego punktu od centroidu jego klastra:</p>
+            <p>$$SSE = \sum_{i} \|x_i - \mu_{c(i)}\|^2$$</p>
+            <p>Algorytm działa tak: losujemy k punktów jako startowe centroidy, a potem w kółko robimy dwie rzeczy – każdy punkt przypisujemy do najbliższego centroidu, a potem przesuwamy centroid na średnią jego klastra. Powtarzamy aż nic się nie zmienia.</p>
+            <p>Na końcu dla każdego klastra liczymy entropię:</p>
+            <p>$$H = -\sum_{i} p_i \log_2(p_i)$$</p>
+            <p>gdzie $p_i$ to udział każdego gatunku w klastrze. Entropia 0 oznacza czysty klaster, wysoka entropia oznacza że gatunki są pomieszane.</p>
+        }
+        else
+        {
+            <p>A university assignment for the AI course - k-means clustering on the Iris dataset, no ML libraries allowed.</p>
+            <p>K-means finds k clusters in the data by minimizing SSE – the sum of squared distances from each point to its cluster centroid:</p>
+            <p>$$SSE = \sum_{i} \|x_i - \mu_{c(i)}\|^2$$</p>
+            <p>The algorithm works like this: pick k random points as initial centroids, then repeat two steps – assign each point to its nearest centroid, then move each centroid to the mean of its cluster. Repeat until nothing changes.</p>
+            <p>At the end, entropy is calculated for each cluster:</p>
+            <p>$$H = -\sum_{i} p_i \log_2(p_i)$$</p>
+            <p>where $p_i$ is the share of each species in the cluster. Entropy of 0 means a pure cluster, high entropy means the species are mixed.</p>
+        }
+    </div>
+</div>
+
+@code {
+    private WorkItem? _item;
+
+    protected override void OnInitialized()
+    {
+        State.OnChange += StateHasChanged;
+        _item = WorksData.All.FirstOrDefault(w => w.Slug == "k-means-iris");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JS.InvokeVoidAsync("renderMath");
+    }
+
+    public void Dispose()
+        => State.OnChange -= StateHasChanged;
+}

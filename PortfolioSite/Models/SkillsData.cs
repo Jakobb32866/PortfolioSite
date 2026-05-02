@@ -22,6 +22,8 @@ public static class SkillsData
         new("GitHub",          "tools"),
         new("Git",          "tools"),
         
+        new("ML", "Artificial Intelligence"),
+        
         new("Rider",        "IDE"),
         new("IntelliJ",        "IDE"),
     ];
